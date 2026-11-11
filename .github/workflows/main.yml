@@ -14,3 +14,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      - name: Update index.html
+        if: github.actor == 'helisheth7'
+        run: sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(11/11/2026)"'</p>' index.html
+
